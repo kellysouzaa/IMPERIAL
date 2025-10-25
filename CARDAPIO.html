@@ -1,0 +1,587 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="description" content="" >
+<meta name="keywords" content="" >
+
+<title>  FLEXBOX APRENDENDO  </title>
+<style>
+  *{
+    margin: 0;
+  }
+ 
+/*a formatação de todas as caixas estão dentro do WRAPPER*/
+.wrapper { /*CAIXA PRINCIPAL que receberá as caixas (BOX)*/
+  margin:auto; /*centralizar*/
+  display: flex; /*para transformar em blocos (FLEXIVEL)*/
+  flex-direction:row; /*DIREÇÃO DAS CAIXAS temos tambem em coluna -> column */
+  flex-wrap: wrap;  /*qdo utilizamos blocos eles ficam um do lado do outro mesmo q tenha tamanho total da tela, entao para resolver isso utilizamos o flex-wrap:wrap */
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+  width: 80%; /*Largura do principal*/
+  height:auto;
+  background-color: rgb(255, 255, 255);
+  padding: 0px; /*espaço entre as caixas e o principal*/
+  box-shadow: 0px 5px 15px #000000; /*deslocamento lateral/deslocamento vertical/espalhamento da sombra/ cor */
+  
+}
+
+
+
+.boxLogo {
+  background-color: #312c30;
+  width: 10%;
+  height: 50px;
+  margin: 0px; /*margem ao redor das caixas quando quiser que fique distantes */
+  text-align: center;
+}
+
+.tamanhoLogo{
+  width: 50%;
+  height: 50px;
+}
+.boxMenu {
+  background-color: rgb(174, 226, 17);
+  width: 90%;
+  height: 50px;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+}
+
+.boxBanner {
+  background-color: rgb(97, 19, 19);
+  width: 100%;
+  height:300px;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+}
+.tamanhoBanner{
+  width: 100%;
+  height: 400px;
+}
+
+/*FORMATAÇÃO DOS CARDS*/
+
+.boxCard {
+  background-color: rgb(255, 255, 255);
+  width: 28%; /*diminui os cards por conta do padding de 1%*/
+  height: auto;
+  margin: 10px; /*margem ao redor das caixas para ficarem distantes */
+  border-radius: 10px;
+  border-style:groove; /*estilo da borda*/
+  border-width: 1px; /*largura da borda*/
+  border-color: #3a351d;
+  padding: 1%; /*espaço entre o conteudo e a margem*/
+}
+
+/*aumentando as imagens do cardapio ao passar o mouse*/
+.zoom {
+  transition: transform 0.3s ease; /* Suaviza o efeito */
+}
+
+.zoom:hover {
+  transform: scale(1.2); /* Aumenta 20% */
+}
+
+.imgCard{
+  width: 100%;
+  height: 200px;
+}
+
+h1{
+  font-size: 20px;
+  text-align: center;
+}
+
+p{
+  text-align: justify;
+}
+
+/*TERMINA AQUI*/
+
+
+.boxImagemEsquerda {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: auto;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+}
+
+.tamanhoImgEsquerda{
+  width: 100%;
+}
+
+.boxTexto {
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  height: auto;
+  padding: 1%;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+  font-size: clamp(1rem, 1vw, 1rem); 
+ 
+}
+
+.boxInfo {
+ /*coloquei essaS 5 linhas abaixo,  parte do wrapper, porque terei o BOXICONE dentro do BOXINFO */
+
+  display: flex; 
+  flex-direction:row; /*DIREÇÃO DAS CAIXAS temos tambem em coluna -> column */
+  flex-wrap: wrap;  /*qdo utilizamos blocos eles ficam um do lado do outro mesmo q tenha tamanho total da tela, entao para resolver isso utilizamos o flex-wrap:wrap */
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+ 
+  background-color: #221F1A;
+  width: 50%;
+  height: 200px;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+  text-align: center;
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+ 
+}
+
+.tamanhoImgRedes{
+  width: 80%;
+  height: 100%;
+}
+
+.boxIcone{ /*caixa dos icones ao lado das redes sociais*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;/*coloquei display flex para centralizar os texto desta caixa na vertical. Veja abaixo*/
+  width: 45%;
+  height: auto;
+  margin: 2%;
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+  color: #ffffff;
+  font-size: clamp(1rem, 1vw, 1rem); 
+
+  
+  
+
+
+}
+
+.boxRodape {
+  background-color: #C4B9B8;
+  width: 100%;
+  height: 40px;
+  margin: 0px; 
+  text-align: center;
+  padding-top: 20px;
+  
+}
+
+.tamanhoRodapeInfo{/*tamanho dos ícones*/
+  width: 15%;
+}
+
+/*botoes*/
+nav{
+	width: 100%;
+	height: 50px;
+	background-color: #312c30;
+  padding-right: 0%;
+  
+  
+}
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+  padding-right: 0%; 
+  
+}
+
+nav ul li{
+	float: left;
+  padding-right: 0%;
+  margin-right:20px;       /*distancia entre os botoes*/
+  margin-top: 10px;
+}
+
+nav ul li a{
+	color: #ffffff;
+	text-decoration: none; /*none desativa o css */
+	padding: 5px;
+	display: block; /*transformar em blocos*/
+  border-style:groove;
+  border-radius: 20px;
+  
+}
+
+nav ul li a:hover{ /*evento mouse em cima do link*/
+	background-color: #f9e404;
+	transition: all .5s; /*efeito de transição*/
+  border-radius: 20px;
+  color:black
+}
+
+/*********ANIMAÇÃO*********/
+
+    .bannerHover {
+          width: 100%;
+          height: 400px;
+          background-image: url('IMAGENS/banner.png'); /* imagem inicial */
+          background-size: cover; /*ajusta o tamanho da imagem de fundo para garantir que ela cubra completamente o elemento, mesmo que isso signifique cortar partes da imagem*/
+          background-position: center;
+          transition: background-image 0.5s ease-in-out;
+        }
+
+        .bannerHover:hover {
+          background-image: url('IMAGENS/banner2.png'); /* imagem ao passar o mouse */
+        }
+
+
+/*ANIMAÇÃO TERMINA AQUI*/
+
+
+
+/* BREAKPOINTS - COR DA TELA EM DIFETENTES DISPOSITIVOS*/
+
+@media (min-width: 576px){
+  body{
+    background-color: red;
+  }
+
+}
+
+@media (min-width: 768px){
+  body{
+    background-color: rgb(0, 85, 255);
+  }
+
+}
+
+
+@media (min-width: 992px){
+  body{
+    background-color: rgb(247, 19, 148);
+  }
+  
+}
+
+@media (min-width: 1200px){
+  body{
+   background-color: rgb(47, 47, 44);
+  }
+  
+}
+
+
+/* BREAKPOINTS - TAMANHO DA TELA EM DIFErENTES DISPOSITIVOS*/
+
+
+@media screen and (min-width : 376px) {
+  .boxCard {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 1%;
+    
+  }
+
+
+  
+}
+
+@media screen and (min-width : 576px) {
+  .boxCard {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 1%;
+    
+   
+    
+  }
+
+  
+
+
+}
+
+@media screen and (min-width : 768px) {
+  .boxCard {
+    width: 50%;
+    float: left;
+    margin-right: 5%;
+    padding: 1%;
+   
+    
+  }
+
+
+     .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+}
+
+  .boxCard {
+    width: 50%;
+    float: left;
+    margin-right: 5%;
+    padding: 1%;
+   
+    
+  }
+
+    .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+  
+
+@media screen and (min-width : 992px) {
+  .boxCard {
+    width: 20%;
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+   
+    
+  }
+
+
+    .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+}
+
+
+@media screen and (min-width : 1200px) {
+  .boxCard {
+    width: 25%;
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+    background-color: rgb(255, 255, 255);
+    
+   
+    
+  }
+
+
+    .boxImagemEsquerda {
+    width: 50%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 45%;
+    float: left;
+    margin-right: 0%;
+    padding: 1%;
+    font-size: clamp(1rem, 1vw, 1rem);  /*CLAMP=FIXAR*/
+   
+    
+  }
+
+
+
+
+}
+/*TERMINA AQUI*/
+
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+ 
+  <div class="boxLogo" >
+   <img src="IMAGENS/LOGO.png" class="tamanhoLogo"  alt="">
+  </div>
+  
+  <div class="boxMenu">
+     <nav>
+      <ul>
+
+        <li>  <a href="INDEX.html">O Imperial</a></li>
+        <li> <a href="CARDAPIO.html" style="background-color: rgb(230, 211, 8);color: black;">Cardápio</a></li>
+        <li> <a href="CONTATO.html"> Contato</a></li>
+
+      </ul>
+     
+     
+     </nav>
+
+
+  </div>
+  
+  
+
+  <!-- PRMEIRO BLOCO -->
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/croissant.jpg" class="imgCard"   alt="">
+    <h1>CROISSANT</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/SUCS.jfif" class="imgCard"   alt="">
+    <h1>SUCOS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/TORTA.jfif" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+    <div class="boxCard zoom">
+    <img src="IMAGENS/CAFE.jpg" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <!-- /*SEGUNDO BLOCO*/ -->
+
+
+    <div class="boxCard zoom">
+    <img src="IMAGENS/SAND.jpg" class="imgCard"   alt="">
+    <h1>CROISSANT</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/SAND (2).jpg" class="imgCard"   alt="">
+    <h1>SUCOS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/BOLO.jpg" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+    <div class="boxCard zoom">
+    <img src="IMAGENS/TORTA2.jpg" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+<!-- TERCEIRO BLOCO -->
+   <div class="boxCard zoom">
+    <img src="IMAGENS/ICE.jpg" class="imgCard"   alt="">
+    <h1>CROISSANT</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/SUCS.jfif" class="imgCard"   alt="">
+    <h1>SUCOS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+  <div class="boxCard zoom">
+    <img src="IMAGENS/TORTA.jfif" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+    <div class="boxCard zoom">
+    <img src="IMAGENS/TORTA.jfif" class="imgCard"   alt="">
+    <h1>TORTA DE LIMÃO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iste ducimus non ipsam repellat, ea quas aliquam possimus rerum dolores dolorem optio sit excepturi nulla accusamus, distinctio adipisci neque consectetur.</p>
+  </div>
+
+
+  <div class="boxInfo"> 
+    <!-- dentro dessa caixa virá 4 cxs para os ícones, por isso ela se tornou pai e herdou as configuraçãoes do wrapper tbm. veja acima -->
+
+      <div class="boxIcone">
+        <img src="IMAGENS/coroaaa.webp" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+        O Imperial
+      </div> 
+      
+      <div class="boxIcone">
+        <img src="IMAGENS/local.webp" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+       Onde estamos
+      </div>  
+
+      <div class="boxIcone">
+        <img src="IMAGENS/cardapio.png" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+       Cardápio
+      </div>  
+
+      <div class="boxIcone">
+        <img src="IMAGENS/cow.png" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+        Coworking
+      </div> 
+
+ </div>
+
+
+
+    <div class="boxInfo">
+           <img src="IMAGENS/RODAPE_REDES.png" class="tamanhoImgRedes" alt="">
+  </div>
+
+  <div class="boxRodape">
+    Todos os direitos reservados - 2025
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+	
+	

@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="description" content="" >
+<meta name="keywords" content="" >
+
+<title>  FLEXBOX APRENDENDO  </title>
+<style>
+  *{
+    margin: 0;
+  }
+ 
+/*a formatação de todas as caixas estão dentro do WRAPPER*/
+.wrapper { /*CAIXA PRINCIPAL que receberá as caixas (BOX)*/
+
+  margin:auto; /*centralizar*/
+  display: flex; /*para transformar em blocos (FLEXIVEL)*/
+  flex-direction:row; /*DIREÇÃO DAS CAIXAS temos tambem em coluna -> column */
+  flex-wrap: wrap;  /*qdo utilizamos blocos eles ficam um do lado do outro mesmo q tenha tamanho total da tela, entao para resolver isso utilizamos o flex-wrap:wrap */
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+  width: 80%; /*Largura do principal*/
+  height:auto;
+  padding: 0px; /*espaço entre as caixas e o principal*/
+  box-shadow: 0px 5px 15px #000000; /*deslocamento lateral/deslocamento vertical/espalhamento da sombra/ cor */
+  
+}
+
+
+
+.boxLogo {
+  background-color: #312c30;
+  width: 10%;
+  height: 50px;
+  margin: 0px; /*margem ao redor das caixas quando quiser que fique distantes */
+  text-align: center;
+}
+
+.tamanhoLogo{
+  width: 50%;
+  height: 50px;
+}
+.boxMenu {
+  background-color: rgb(174, 226, 17);
+  width: 90%;
+  height: 50px;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+
+}
+.boxContato{
+  width: 45%;
+  height: 400px;
+  padding-left: 5%;
+  background-color: rgb(255, 255, 255);
+ 
+  
+  
+  
+}
+
+.boxTelefone{
+  display: flex; /*display flex para alinhar na vertical os dados. justify e align abaixo*/
+  width: 40%;
+  height: 200px;
+  padding: 2%;
+  text-align: center;
+  background-color:#006A62;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+  
+}
+.tamanhoImgTelefone{
+  padding-top: 10%;
+  width: 50%;
+}
+
+/* formatação formulário */
+
+form{
+	width:100%;/*largura do formulário*/
+  height: 500px;
+	margin:auto; /*para ficar no centro*/
+	font-family:'Century Gothic', 'Arial Narrow', Arial, sans-serif;
+  
+  
+  
+	
+}
+input, textarea{ /*fundo da caixa de preenchimento de dados*/
+	font-family:verdana, sans-serif;
+	font-weight:normal;
+	font-size:1.2em;
+	background-color:#f8f3f3;
+	font-family:'Century Gothic', 'Arial Narrow', Arial, sans-serif;
+	border-color: #696868;
+	padding: 5px;
+	border-radius: 5px;
+
+}
+
+
+input:hover, textarea:hover{ /*quando passar o mouse na caixa de texto mudará de cor */
+	background-color:#d5d8da;
+	
+}
+
+
+
+
+.boxInfo {
+ /*coloquei essaS 5 linhas abaixo,  parte do wrapper, porque terei o BOXICONE dentro do BOXINFO */
+
+  display: flex; 
+  flex-direction:row; /*DIREÇÃO DAS CAIXAS temos tambem em coluna -> column */
+  flex-wrap: wrap;  /*qdo utilizamos blocos eles ficam um do lado do outro mesmo q tenha tamanho total da tela, entao para resolver isso utilizamos o flex-wrap:wrap */
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+ 
+  background-color: #221F1A;
+  width: 50%;
+  height: 200px;
+  margin: 0px; /*margem ao redor das caixas para ficarem distantes */
+  text-align: center;
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+ 
+}
+
+.tamanhoImgRedes{
+  width: 80%;
+  height: 100%;
+}
+
+.boxIcone{ /*caixa dos icones ao lado das redes sociais*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;/*coloquei display flex para centralizar os texto desta caixa na vertical. Veja abaixo*/
+  width: 45%;
+  height: auto;
+  margin: 2%;
+  justify-content:center;/*alinhando os blocos na horizontal dentro do principal*/
+  align-items:center; /*alinhando os blocos na vertical */
+  color: #ffffff;
+  font-size: clamp(1rem, 1vw, 1rem); 
+
+}
+
+.boxRodape {
+  background-color: #C4B9B8;
+  width: 100%;
+  height: 40px;
+  margin: 0px; 
+  text-align: center;
+  padding-top: 20px;
+  
+}
+
+.tamanhoRodapeInfo{/*tamanho dos ícones*/
+  width: 15%;
+}
+
+/*botoes*/
+nav{
+	width: 100%;
+	height: 50px;
+	background-color: #312c30;
+  padding-right: 0%;
+  
+  
+  
+}
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+  padding-right: 0%; 
+  
+}
+
+nav ul li{
+	float: left;
+  padding-right: 0%;
+  margin-right:20px;       /*distancia entre os botoes*/
+  margin-top: 10px;
+}
+
+nav ul li a{
+	color: #ffffff;
+	text-decoration: none; /*none desativa o css */
+	padding: 5px;
+	display: block; /*transformar em blocos*/
+  border-style:groove;
+  border-radius: 20px;
+  
+}
+
+nav ul li a:hover{ /*evento mouse em cima do link*/
+	background-color: #f9e404;
+	transition: all .5s; /*efeito de transição*/
+  border-radius: 20px;
+  color:black
+}
+
+
+
+
+/* BREAKPOINTS - COR DA TELA EM DIFETENTES DISPOSITIVOS*/
+
+@media (min-width: 576px){
+  body{
+    background-color: red;
+  }
+
+}
+
+@media (min-width: 768px){
+  body{
+    background-color: rgb(0, 85, 255);
+  }
+
+}
+
+
+@media (min-width: 992px){
+  body{
+    background-color: rgb(247, 19, 148);
+  }
+  
+}
+
+@media (min-width: 1200px){
+  body{
+     background-color: rgb(47, 47, 44);
+  }
+  
+}
+
+
+/* BREAKPOINTS - TAMANHO DA TELA EM DIFErENTES DISPOSITIVOS*/
+
+
+@media screen and (min-width : 376px) {
+  .boxCard {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 1%;
+    
+  }
+
+
+  
+}
+
+@media screen and (min-width : 576px) {
+  .boxCard {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 1%;
+    
+   
+    
+  }
+
+  
+
+
+}
+
+@media screen and (min-width : 768px) {
+  .boxCard {
+    width: 50%;
+    float: left;
+    margin-right: 5%;
+    padding: 1%;
+   
+    
+  }
+
+
+     .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+}
+
+  .boxCard {
+    width: 50%;
+    float: left;
+    margin-right: 5%;
+    padding: 1%;
+   
+    
+  }
+
+    .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+  
+
+@media screen and (min-width : 992px) {
+  .boxCard {
+    width: 20%;
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+   
+    
+  }
+
+
+    .boxImagemEsquerda {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+      .boxTexto {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+}
+
+
+@media screen and (min-width : 1200px) {
+  .boxCard {
+    width: 25%;
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+    background-color: rgb(255, 255, 255);
+    
+   
+    
+  }
+
+
+    .boxImagemEsquerda {
+    width: 50%;
+    float: left;
+    margin-right: 0%;
+    padding: 0%;
+   
+    
+  }
+
+    .boxTexto {
+    width: 45%;
+    float: left;
+    margin-right: 0%;
+    padding: 1%;
+    font-size: clamp(1rem, 1vw, 1rem);  /*CLAMP=FIXAR*/
+   
+    
+  }
+
+
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+ 
+  <div class="boxLogo" >
+   <img src="IMAGENS/LOGO.png" class="tamanhoLogo"  alt="">
+  </div>
+  
+  <div class="boxMenu">
+     <nav>
+      <ul>
+
+        <li>  <a href="INDEX.html" >O Imperial</a></li>
+        <li> <a href="CARDAPIO.html">Cardápio</a></li>
+        <li> <a href="CONTATO.html"  style="background-color: rgb(230, 211, 8);color: black;"> Contato</a></li>
+
+      </ul>
+     
+     
+     </nav>
+
+
+  </div>
+
+<div class="boxContato">
+
+      <form id="meu" method="post" id="fContato" action="mailto:cafeteria@cafeteria.com.br">
+         <br>
+            <label for="cNome"> Seu nome: </label> <br>
+            <input type="text" name="tNome" id="cNome" size="40%" maxlength="20"    placeholder="Digite seu nome aqui" autofocus required />
+          <p>
+
+            <label for="cFone"> Telefone para contato: </label> <br>
+            <input type="text" name="tFome" id="cFome" size="40%" maxlength="20"  required />
+          <p>
+            <label for="cMail">E-mail:</label> <br>
+            <input type="email" name="tMail" id="cMail" size="40%" maxlength="30"  placeholder="Ex: exemplo@mail.com" required />
+          </p>
+
+          <p> 
+          <label for="cMsg">Mensagem:</label> <br>
+          <textarea name="tMsg" id="cMsg" cols="40%" rows="5" placeholder="Deixe aqui sua mensagem">
+          </textarea>
+          </p>
+
+
+          <input type="submit" name="Enviar" /> 
+
+
+      </form>
+
+
+        
+
+</div>
+
+<div class="boxTelefone">
+
+   
+    R. Dr. José de Queirós Aranha, 45 - Vila Mariana <br> São Paulo/SP 
+    <br>
+
+   contato@domenicacafe.com.br <br>
+    55 11 4561-4222 (fixo)
+</div>
+  
+ 
+
+  
+  <div class="boxInfo"> 
+    <!-- dentro dessa caixa virá 4 cxs para os ícones, por isso ela se tornou pai e herdou as configuraçãoes do wrapper tbm. veja acima -->
+
+      <div class="boxIcone">
+        <img src="IMAGENS/coroaaa.webp" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+        O Imperial
+      </div> 
+      
+      <div class="boxIcone">
+        <img src="IMAGENS/local.webp" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+       Onde estamos
+      </div>  
+
+      <div class="boxIcone">
+        <img src="IMAGENS/cardapio.png" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+       Cardápio
+      </div>  
+
+      <div class="boxIcone">
+        <img src="IMAGENS/cow.png" class="tamanhoRodapeInfo"  style="margin-right: 10px;" alt="">
+        Coworking
+      </div> 
+
+ </div>
+
+
+
+    <div class="boxInfo">
+           <img src="IMAGENS/RODAPE_REDES.png" class="tamanhoImgRedes" alt="">
+  </div>
+
+  <div class="boxRodape">
+    Todos os direitos reservados - 2025
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+	
+	
